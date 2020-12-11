@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clima</title>
+    <link rel="stylesheet" href="{% static "css/styleindex.css"%}">
+    <style media="screen">
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Descubra a Temperatura</h1>
+      <form method="GET">
+        <label for="cidade"></label>
+        <input type="text" name="cidade" id="cidade" placeholder="Digite a cidade aqui"><br>
+        <input type="submit" value="Buscar">
+      </form>
+      {% if tempo %}
+        <h3>{{ tempo.regiao }}</h3>
+        <h3>{{ tempo.diahora }}</h3>
+        <h3>{{ tempo.temperatura }}°C</h3>
+        <h3>{{ tempo.status }}</h3>
+      {% endif %}
+    </div>
+  </body>
+</html>
